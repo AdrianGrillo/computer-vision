@@ -30,3 +30,17 @@ resized_img = cv2.resize(fixed_img, (0,0), fixed_img, w_ratio, h_ratio)
 #After resizing fixed_img by a factor of 50%, the shapes of each image are as follows:
 fixed_img.shape = (1950, 1300, 3)
 resized_img.shape = (650, 975, 3)
+
+# Flip an image on the x-axis
+flipped_img = cv2.flip(fixed_img, 0)
+
+# Flip an image on the y-axis
+flipped_img = cv2.flip(fixed_img, 1)
+
+# Flip an image on the x-axis and y-axis
+flipped_img = cv2.flip(fixed_img, -1)
+
+# Adjust the amount of canvas space allowed an image in jupyter notebook by adjusting the integers in figsize
+fig = plt.figure(figsize=(20, 20))
+ax = fig.add_subplot(111)
+ax.imshow(fixed_img)
