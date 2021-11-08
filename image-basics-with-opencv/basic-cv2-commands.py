@@ -15,4 +15,18 @@ img_grey = cv2.imread('../DATA/00-puppy.jpg', cv2.IMREAD_GREYSCALE)
 
 # imread uses a default color mapping so if img_grey is passed to imread then it won't be in grayscale. To remedy this, pass cmap='gray' and now the image will be shown in grayscale. 
 
+# Output the grayscale image using gray color mapping 
 plt.imshow(img_grey, cmap='gray')
+
+# Resize images with a width of 1000px and a height of 400px
+new_img = cv2.resize(fixed_img, (1000, 400))
+
+# Resize images with ratios 
+
+w_ratio = 0.5
+h_ratio = 0.5
+resized_img = cv2.resize(fixed_img, (0,0), fixed_img, w_ratio, h_ratio)
+
+#After resizing fixed_img by a factor of 50%, the shapes of each image are as follows:
+fixed_img.shape = (1950, 1300, 3)
+resized_img.shape = (650, 975, 3)
