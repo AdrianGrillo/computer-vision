@@ -8,6 +8,7 @@ def draw_circle(event, x, y, flags, param):
     if event == cv2.EVENT_LBUTTONDOWN:
         cv2.circle(img, (x, y), 50, (0, 255, 0), -1)
 
+# Name the window then connect that window by name to the function defined as draw_circle
 cv2.namedWindow(winname='my_drawing')
 
 cv2.setMouseCallback('my_drawing', draw_circle)
