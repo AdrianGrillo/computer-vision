@@ -9,6 +9,7 @@ img = cv2.imread('../DATA/00-puppy.jpg')
 
 # Convert from BGR to RGB 
 fixed_img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+# If working with other color mappings, cv2 also has available the functionality to convert to HSL and HSV
 
 # Bring in an image in grayscale (No color channels)
 img_grey = cv2.imread('../DATA/00-puppy.jpg', cv2.IMREAD_GREYSCALE)
