@@ -12,7 +12,7 @@ def draw_circle(event, x, y, flags, param):
     
     if event == cv2.EVENT_RBUTTONDOWN:
         cv2.circle(img, (x, y), 50, (0, 255, 0), -1)
-    elif event == cv2.EVENT_RBUTTONDOWN:
+    elif event == cv2.EVENT_RBUTTONUP:
         cv2.circle(img, (x, y), 50, (255, 0, 0), -1)
 
 def draw_rectangle(event, x, y, flags, param):
@@ -26,7 +26,9 @@ def draw_rectangle(event, x, y, flags, param):
         ix, iy = x, y
 
     elif event == cv2.EVENT_MOUSEMOVE: 
-        cv2.rectangle(img, (ix, iy), (x, y), (0, 0, 255), -1)
+        if drawing == True: 
+            cv2.rectangle(img, (ix, iy), (x, y), (0, 0, 255), -1)
+
     elif event == cv2.EVENT_LMOUSEBUTTONUP:
         drawing = False
         cv2.rectangle(img, (ix, iy), (x, y), (0, 0, 255), -1)
