@@ -2,6 +2,8 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 
+# The idea here is to overlay a watermark onto a larger image but without the background so that it looks seamless. To acheive this, index out the region that the watermark will lay on top of then create the mask that will eventually sit on top of it. The mask will be black and white initally: anywhere with black will be filtered out and where there is white, color will show through and be displayed onto the larger image. Once the mask is in grayscale, overlay the original color image on top of the grayscale mask so that instead of white, it's the color from the orignal image while the background is still black. Then place the completed mask over the indexed out ROI. The last step is to replace the original ROI from the larger image with the watermarked one that was just created. 
+
 # Import images to be overlaid and resize accordingly
 img1 = cv2.imread('../DATA/dog_backpack.png')
 img2 = cv2.imread('../DATA/watermark_no_copy.png')
