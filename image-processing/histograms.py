@@ -63,4 +63,4 @@ color_gorilla = cv2.imread('../DATA/gorilla.jpg')
 hsv = cv2.cvtColor(color_gorilla, cv2.COLOR_BGR2HSV)
 
 # Equalize only the value channel of the HSV image then reset the value chanel to the new equalized values
-hsv[:,:,2] = cv2.equalizeHist(hsv[:,:,2])
+hsv[:,:,2] = cv2.equalizeHist(hsv[:,:,2]) 
