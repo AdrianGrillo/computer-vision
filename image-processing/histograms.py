@@ -24,3 +24,22 @@ for i, col in enumerate(color):
     plt.xlim([0, 256])
     
 plt.title('HISTOGRAM FOR BLUE BRICKS')
+
+###################################################
+## Display the histogram of an image with a mask ##
+###################################################
+img = rainbow
+
+# img.shape = (550, 413, 3)
+# Create a black canvas with the same shape as img 
+mask = np.zeros(img.shape[:2], np.uint8)
+
+# Set a portion of the black image to white, this is the area where the original image will shine through while everything else remains black
+mask[300:400, 100:400] = 255
+
+# Place the mask over the image 
+masked_img = cv2.bitwise_and(img,img, mask=mask)
+
+# Calulate the histogram for the masked image, then plot them
+hist_masked_values_red = cv2.calcHist([rainbow], channels=[2], mask=mask, histSize=[256], ranges=[0, 256])
+plt.plot(hist_masked_values_red)
