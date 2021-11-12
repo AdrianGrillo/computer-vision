@@ -48,6 +48,7 @@ plt.plot(hist_masked_values_red)
 ## Equalize a Grayscale and Color Image ##
 ##########################################
 
+# Import as grayscale
 gorilla = cv2.imread('../DATA/gorilla.jpg', 0)
 
 def display_img(img,cmap=None):
