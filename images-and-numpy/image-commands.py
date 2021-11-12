@@ -10,5 +10,5 @@ plt.imshow(pic_arr)
 
 pic_arr.shape
 
-# (1300, 1950, 3) 3 iimages to makeup one, each image contains only red, blue, in green varying in different amounts.
+# (1300, 1950, 3) 3 images to makeup one, each image contains only red, blue, in green varying in different amounts.
 # Use array slicing to manipulate a certain color channel and zero our certain indexes to remove color from certain spots in the image
