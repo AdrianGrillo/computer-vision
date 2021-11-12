@@ -43,3 +43,24 @@ masked_img = cv2.bitwise_and(img,img, mask=mask)
 # Calulate the histogram for the masked image, then plot them
 hist_masked_values_red = cv2.calcHist([rainbow], channels=[2], mask=mask, histSize=[256], ranges=[0, 256])
 plt.plot(hist_masked_values_red)
+
+##########################################
+## Equalize a Grayscale and Color Image ##
+##########################################
+
+gorilla = cv2.imread('../DATA/gorilla.jpg', 0)
+
+def display_img(img,cmap=None):
+    fig = plt.figure(figsize=(10,8))
+    ax = fig.add_subplot(111)
+    ax.imshow(img,cmap)
+
+# Equalize the greyscale image 
+eq_gorilla = cv2.equalizeHist(gorilla)
+
+# To equalize a color image, the format must be HSV, so convert HSV
+color_gorilla = cv2.imread('../DATA/gorilla.jpg')
+hsv = cv2.cvtColor(color_gorilla, cv2.COLOR_BGR2HSV)
+
+# Equalize only the value channel of the HSV image then reset the value chanel to the new equalized values
+hsv[:,:,2] = cv2.equalizeHist(hsv[:,:,2])
