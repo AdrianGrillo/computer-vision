@@ -8,11 +8,7 @@ width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
 height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
 
 # Create writer object. String passed to second param is OS dependent, since I'm on windows it DIVX. 
-<<<<<<< HEAD
 writer = cv2.VideoWriter('mysupervideo.mp4', cv2.VideoWriter_fourcc(*'mpv4'), 30, (width, height))
-=======
-writer = cv2.VideoWriter('mysupervideo.mp4', cv2.VideoWriter_fourcc(*'DIVX'), 30, (width, height))
->>>>>>> a5f8898928d6a19d2c608f145c274ab920e7fbe6
 
 # Write and display video capture data
 while True: 
